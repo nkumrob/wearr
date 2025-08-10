@@ -5,13 +5,17 @@ import { OutfitRecommender } from '@/lib/server/outfit-recommender'
 export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams
+    const lat = searchParams.get('lat')
+    const lon = searchParams.get('lon')
     const location = searchParams.get('location') || 'London'
     const days = parseInt(searchParams.get('days') || '7')
     
     const weatherClient = new WeatherAPIClient()
     const outfitRecommender = new OutfitRecommender()
     
-    const weatherData = await weatherClient.getForecast(location, days)
+    // Use coordinates if provided, otherwise use location name
+    const queryLocation = lat && lon ? `${lat},${lon}` : location
+    const weatherData = await weatherClient.getForecast(queryLocation, days)
     
     // Generate outfit recommendation for current weather
     const currentOutfit = outfitRecommender.recommendOutfitForWeather(weatherData.current)

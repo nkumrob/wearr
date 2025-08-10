@@ -47,3 +47,6 @@
 - Fixed Next.js image configuration for WeatherAPI CDN
 - Removed deprecated swcMinify option from next.config.js
 - Weather API key is now active
+- Implemented auto-detect location functionality
+- Added location detection button to both home and week pages
+- Updated API endpoint to handle lat/lon coordinates
