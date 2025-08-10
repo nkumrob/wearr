@@ -19,6 +19,7 @@
   "license": "ISC",
   "description": "AI-Powered Outfit Planner PWA",
   "dependencies": {
+    "@next/font": "^14.2.15",
     "@types/node": "^24.2.1",
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",

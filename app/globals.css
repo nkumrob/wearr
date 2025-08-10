@@ -4,34 +4,186 @@
 
 @layer base {
   :root {
-    --weather-blue: 59 130 246;
-    --weather-gray: 107 114 128;
-    --weather-light: 243 244 246;
+    /* Premium Color System - Warm neutrals with cool accents */
+    --color-cream: #FEF7ED;
+    --color-warm-white: #FFFBF7;
+    --color-warm-gray-50: #FAF9F7;
+    --color-warm-gray-100: #F5F3F0;
+    --color-warm-gray-200: #E8E4DF;
+    --color-warm-gray-300: #D4CFC7;
+    --color-warm-gray-400: #B3AA9F;
+    --color-warm-gray-500: #8B8176;
+    --color-warm-gray-600: #6B6157;
+    --color-warm-gray-700: #4A433B;
+    --color-warm-gray-800: #2F2A24;
+    --color-warm-gray-900: #1A1815;
+    
+    /* Cool accent colors */
+    --color-primary: #065F46;
+    --color-primary-light: #D1FAE5;
+    --color-secondary: #1E40AF;
+    --color-secondary-light: #DBEAFE;
+    
+    /* Typography scale - Perfect Fourth (1.333) */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    --text-5xl: 3rem;
+    --text-6xl: 3.75rem;
+    --text-7xl: 4.5rem;
+    --text-8xl: 6rem;
+    
+    /* Spacing scale */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+    --space-32: 8rem;
+    
+    /* Animation curves */
+    --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+    --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.08);
+    --shadow-xl: 0 16px 40px rgba(0, 0, 0, 0.1);
   }
+
 
   html {
     @apply scroll-smooth;
   }
 
   body {
-    @apply bg-gray-50 text-gray-900;
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--color-warm-white);
+    color: var(--color-warm-gray-900);
+    font-feature-settings: 'cv11', 'ss01', 'ss03';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
 @layer components {
+  /* Premium card design */
   .weather-card {
-    @apply bg-white rounded-xl shadow-md p-6 transition-all hover:shadow-lg;
+    background: white;
+    border: 1px solid var(--color-warm-gray-200);
+    border-radius: 0.75rem;
+    padding: var(--space-8);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s var(--ease-out-cubic);
+  }
+
+  .weather-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-warm-gray-300);
   }
 
   .outfit-card {
-    @apply bg-white rounded-xl shadow-md overflow-hidden transition-all hover:shadow-lg;
+    background: white;
+    border: 1px solid var(--color-warm-gray-200);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s var(--ease-out-cubic);
   }
 
+  .outfit-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-warm-gray-300);
+  }
+
+  /* Premium button design */
   .btn-primary {
-    @apply bg-weather-blue text-white px-6 py-3 rounded-lg font-medium transition-colors hover:bg-blue-600 active:bg-blue-700;
+    font-weight: 600;
+    font-size: var(--text-base);
+    letter-spacing: -0.01em;
+    padding: var(--space-3) var(--space-6);
+    background: var(--color-primary);
+    color: white;
+    border: 2px solid var(--color-primary);
+    border-radius: 0.5rem;
+    transition: all 0.15s var(--ease-out-cubic);
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background: #047857;
+    border-color: #047857;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(6, 95, 70, 0.25);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(6, 95, 70, 0.15);
+  }
+
+  .btn-primary:disabled {
+    background: var(--color-warm-gray-300);
+    border-color: var(--color-warm-gray-300);
+    color: var(--color-warm-gray-500);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
   }
 
   .btn-secondary {
-    @apply bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-medium transition-colors hover:bg-gray-300 active:bg-gray-400;
+    font-weight: 600;
+    font-size: var(--text-base);
+    letter-spacing: -0.01em;
+    padding: calc(var(--space-3) - 2px) calc(var(--space-6) - 2px);
+    background: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-radius: 0.5rem;
+    transition: all 0.15s var(--ease-out-cubic);
+    cursor: pointer;
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-primary);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(6, 95, 70, 0.15);
+  }
+
+  .btn-secondary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(6, 95, 70, 0.1);
+  }
+
+  /* Typography classes */
+  .headline {
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    color: var(--color-warm-gray-900);
+  }
+
+  .text-secondary {
+    color: var(--color-warm-gray-600);
+  }
+
+  .text-tertiary {
+    color: var(--color-warm-gray-500);
   }
 }
