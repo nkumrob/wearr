@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/robertappiah/Documents/Apps/wearr/logs/.80facd895a0150ca11ad3da5f0eb8e462a2509f7-audit.json",
+    "files": [
+        {
+            "date": 1754813863932,
+            "name": "/Users/robertappiah/Documents/Apps/wearr/logs/mcp-puppeteer-2025-08-10.log",
+            "hash": "134efd8b83188826d15c5e65db6ef3a054355a2ba4bc0b09448299621b468375"
+        }
+    ],
+    "hashType": "sha256"
+}

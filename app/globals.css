@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --weather-blue: 59 130 246;
+    --weather-gray: 107 114 128;
+    --weather-light: 243 244 246;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  .weather-card {
+    @apply bg-white rounded-xl shadow-md p-6 transition-all hover:shadow-lg;
+  }
+
+  .outfit-card {
+    @apply bg-white rounded-xl shadow-md overflow-hidden transition-all hover:shadow-lg;
+  }
+
+  .btn-primary {
+    @apply bg-weather-blue text-white px-6 py-3 rounded-lg font-medium transition-colors hover:bg-blue-600 active:bg-blue-700;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-medium transition-colors hover:bg-gray-300 active:bg-gray-400;
+  }
+}
