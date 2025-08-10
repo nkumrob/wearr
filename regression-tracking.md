@@ -3,6 +3,10 @@
 ## Known Issues
 - None currently identified
 
+## Fixed Issues
+- ✅ Next.js image configuration for cdn.weatherapi.com
+- ✅ Removed deprecated swcMinify from next.config.js
+
 ## Potential Regression Points
 1. Weather API key not configured (placeholder value)
 2. Service worker cache invalidation on updates

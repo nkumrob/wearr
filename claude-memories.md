@@ -37,8 +37,13 @@
 - PWA capabilities for offline access
 
 ## Next Steps
-- Add actual WeatherAPI.com key
+- Add actual WeatherAPI.com key ✅ (Added by user)
 - Integrate OpenAI for outfit descriptions
 - Add user preferences storage
 - Implement push notifications
 - Add virtual closet feature
+
+## Recent Fixes
+- Fixed Next.js image configuration for WeatherAPI CDN
+- Removed deprecated swcMinify option from next.config.js
+- Weather API key is now active
